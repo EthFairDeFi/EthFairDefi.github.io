@@ -33,10 +33,6 @@
 
 <body class="bg_main">
 <div id="wrapper_4">
-
-<canvas id="drawcanvas">
-</canvas>
-
 		<div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
 			<h1>EthFair</h2>
 		</div> 
@@ -135,7 +131,6 @@ prizes.push([100, 1000000]);
 function fill_progress_bar(myBalance){
 	var current_interval = 0;
 	var bar_percentage = 0;
-
 	for (var i = 0; i < prizes.length; i++) {
 		if (myBalance < prizes[i][1])
 		{
@@ -144,14 +139,11 @@ function fill_progress_bar(myBalance){
 		}
 	}
 	console.log(current_interval);
-
 	if(current_interval > 0)
 	{
 		bar_percentage += prizes[current_interval - 1][0];
 		var interval_percentage = (myBalance - prizes[current_interval - 1][1]) / (prizes[current_interval][1] - prizes[current_interval - 1][1]);
 		bar_percentage += interval_percentage * (prizes[current_interval][0] - prizes[current_interval - 1][0]);
-
-
 		console.log("Calculations: ", interval_percentage);
 		console.log("BAR: ", bar_percentage);
 	}
@@ -200,18 +192,14 @@ $(document).ready(function(){
 //Работа с контрактом
 /*
 var web3 = new Web3(Web3.givenProvider || "https://main-rpc.linkpool.io");
-
 var myBalance;
 var myContract = new web3.eth.Contract(abiArray, '0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3');
-
 console.log(myContract);
-
 myContract.methods.balanceOf("0x01000b5fe61411c466b70631d7ff070187179bbf").call().then(function(receipt){
 		console.log("RESULT_1 ", receipt);
 		myBalance = receipt;
 		document.getElementById("balance").innerHTML = myBalance;
 		document.getElementById("balance").innerHTML += "/1 000 000";
-
 		//console.log(document.getElementById("myBar1"));
 		fill_progress_bar(400000);
 });
@@ -595,239 +583,5 @@ for (i = 0; i < acc.length; i++) {
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
 	AOS.init();
-</script>
-
-
-
-
-
-
-<!--
-
-	================================================================
-
-	DEXES WebGL renderer
-
-	ThreeJS for reference: https://threejs.org/
-	Written in VANILLA JS, ThreJS R106
-
-	================================================================
-
-
- -->
-
-
-
-
-
-    <script type="x-shader/x-vertex" id="vertexshader">
-
-      varying vec2 vUv;
-
-      void main() {
-
-        vUv = uv;
-
-        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-
-      }
-
-    </script>
-
-    <script type="x-shader/x-fragment" id="fragmentshader">
-
-      uniform sampler2D baseTexture;
-      uniform sampler2D bloomTexture;
-
-      varying vec2 vUv;
-
-      void main() {
-
-        gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
-
-      }
-
-    </script>
-  
-<script type="module">
-      import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js';
-
-      import { GUI } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/libs/dat.gui.module.js';
-
-      import { OrbitControls } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js';
-      import { EffectComposer } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/postprocessing/EffectComposer.js';
-      import { RenderPass } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/postprocessing/RenderPass.js';
-      import { ShaderPass } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/postprocessing/ShaderPass.js';
-      import { UnrealBloomPass } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/postprocessing/UnrealBloomPass.js';
-
-function main() {
-
-      const bloomLayer = new THREE.Layers();
-      bloomLayer.set( 1 );
-
-      const darkMaterial = new THREE.MeshBasicMaterial( { color: "black" } );
-      const materials = {};
-
-      let rotationAccelerator = 0;
-
-  const canvas = document.querySelector('#drawcanvas');
-  var renderer = new THREE.WebGLRenderer({canvas, antialias: true});
-
-console.log(window.innerWidth);
-
-if(window.innerWidth < 780)
-{
-	canvas.remove();
-}
-
-  const composer = new EffectComposer( renderer );
-
-  //renderer.setSize(500, 500);   // COMMENTED OUT - this overrides the values of the HTML elemtn
-  //document.body.appendChild(renderer.domElement);
-
-  renderer.setSize(canvas.width, canvas.height);
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 200 );
-  camera.layers.enable(1);
-  camera.position.set( 2, 3, 8 );
-  camera.lookAt( 0, 0, 0 );
-
-const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-//bloomPass.exposure = 900000000
-bloomPass.threshold = 0
-bloomPass.strength = 1.5
-bloomPass.radius = 1.2
-bloomPass.renderToScreen = true
-
-      const finalPass = new ShaderPass(
-        new THREE.ShaderMaterial( {
-          uniforms: {
-            baseTexture: { value: null },
-            bloomTexture: { value: composer.renderTarget2.texture }
-          },
-          vertexShader: document.getElementById( 'vertexshader' ).textContent,
-          fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
-          defines: {}
-        } ), "baseTexture"
-      );
-      finalPass.needsSwap = true;
-
-  const renderScene = new RenderPass( scene, camera );
-
-  composer.renderToScreen = false;
-  composer.addPass( renderScene );
-  composer.addPass( bloomPass );
-  composer.setSize( window.innerWidth, window.innerHeight );
-
-
-  const finalComposer = new EffectComposer( renderer );
-  finalComposer.setSize( window.innerWidth, window.innerHeight );
-  finalComposer.renderToScreen = true;
-  finalComposer.addPass( renderScene );
-  finalComposer.addPass( finalPass );
-
-
-      const controls = new OrbitControls( camera, renderer.domElement );
-      controls.maxPolarAngle = Math.PI * 0.5;
-      controls.minDistance = 1;
-      controls.maxDistance = 40;
-      //controls.addEventListener( 'change', render );
-
-
-let renderedText;
-
-var loader = new THREE.FontLoader();
-
-let textLoader = loader.load("../fonts/gentilis_bold.typeface.json", function(font) {
-  var geometry = new THREE.TextGeometry("EthFair", {
-    font: font,
-    size: 2.3,
-    height: 0.125,
-    curveSegments: 12
-  });
-  renderedText = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial( { emissive: 0xffa500, opacity: 0.85, transparent: true } ));
-  renderedText.layers.enable(1);
-  renderedText.geometry.center();
-  scene.add(renderedText);
-});
-
-
-
-
-        document.getElementById("drawcanvas").addEventListener( 'click', function () {
-
-          rotationAccelerator = 0.5;
-          console.log("accelerator reset");
-
-        }, true );
-
-
-        function render() {
-
-/*
-    cubes.forEach((cube, ndx) => {
-      const speed = 1 + ndx * .1;
-      const rot = time * speed;
-      cube.rotation.x = rot;
-    });*/
-
-/*
-        if(blasterText != undefined)
-        {
-          renderedText.rotation.y = 1;
-        }
-        */
-
-        if(renderedText != undefined)
-        {
-          renderedText.rotation.y -= rotationAccelerator;
-          if(rotationAccelerator > 0)
-          {
-            rotationAccelerator -= 0.005;
-            if(rotationAccelerator < 0.01)
-            {
-              rotationAccelerator = 0;
-            }
-          }
-        }
-
-
-          scene.traverse( darkenNonBloomed );
-          composer.render();
-          scene.traverse( restoreMaterial );
-          finalComposer.render();
-
-          requestAnimationFrame(render);
-        }
-        requestAnimationFrame(render);
-
-      function darkenNonBloomed( obj ) {
-
-        if ( obj.isMesh && bloomLayer.test( obj.layers ) === false ) {
-
-          materials[ obj.uuid ] = obj.material;
-          obj.material = darkMaterial;
-
-        }
-
-      }
-
-      function restoreMaterial( obj ) {
-
-        if ( materials[ obj.uuid ] ) {
-
-          obj.material = materials[ obj.uuid ];
-          delete materials[ obj.uuid ];
-
-        }
-
-      }
-
-      console.log("Camera Layers", camera.layers);
-    }
-
-
-main();
 </script>
 </html>
