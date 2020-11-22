@@ -19,18 +19,7 @@ body {
   width:auto;
   height: 55vw;
 }
-#drawcanvas{
-  position: relative;
-  left: 40%;
-  width: 100%;
-  height: 30%;
-  display: block;
-}
-@media (min-width: 781px) {
-  #wrapper_4 div{
-    display: none;
-  }
-}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -1303,9 +1292,7 @@ line_main {
     width: 45%;
     margin-left: 50%;
   }
- #wrapper_4 canvas {
-    display: none;
-  }
+ 
   h6 {
     margin-top: 3%;
     width: 100%;
