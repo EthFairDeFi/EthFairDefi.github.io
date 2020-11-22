@@ -34,11 +34,8 @@
 <body class="bg_main">
 <div id="wrapper_4">
 
-
-
-<canvas id="drawcanvas" class="drawcanvas">
+<canvas id="drawcanvas">
 </canvas>
-
 
 		<div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
 			<h1>EthFair</h2>
@@ -676,8 +673,12 @@ function main() {
   const canvas = document.querySelector('#drawcanvas');
   var renderer = new THREE.WebGLRenderer({canvas, antialias: true});
 
+console.log(window.innerWidth);
 
-
+if(window.innerWidth < 780)
+{
+	canvas.remove();
+}
 
   const composer = new EffectComposer( renderer );
 
