@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 	<title>EthFair</title>
 	<link rel="stylesheet" href="style.css" />
 	 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -16,22 +23,24 @@
 	<script src='abi.js'></script>
 	<script type="script.js"></script>
 	<script src='particlesjs-config.json'></script>
+	
 </head>
 
 <header id="header_1">
 		<div id="logo"> <img src="img/logo.png"> </div>
 			<div id="menuHead">
 				<a href="#social"><div>Contacts</div></a>
-				<a href="https://drive.google.com/file/d/1hifxB8SxrqLdvO7d8Joz_Ef8Fc2irgO2/view" onclick="window.open('https://drive.google.com/file/d/1hifxB8SxrqLdvO7d8Joz_Ef8Fc2irgO2/view')"><div>Whitepaper</div></a>
+				<a href="https://drive.google.com/file/d/1hnVg0dXAYpG3e4QyBVAJH9AQ-MRvZHie/view" onclick="window.open('https://drive.google.com/file/d/1hnVg0dXAYpG3e4QyBVAJH9AQ-MRvZHie/view')"><div>Whitepaper</div></a>
+				<!-- <a href="https://vk.com/away.php?utf=1&to=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1hifxB8SxrqLdvO7d8Joz_Ef8Fc2irgO2%2Fview%3Fusp%3Dsharing" target="_blank"><div>Whitepaper</div></a> -->
 				<a href="#about_us"><div>About us</div></a>
 				<a href="#roadmap"><div>Roadmap</div></a>
 				<a href="#prizes"><div>Prizes</div></a>
 				<a href="#about_project"><div>About project</div></a>
-				
+			</div>
 		</div>
 </header>
 
-<body class="bg_main">
+<body class="bg_main bg_main10">
 <div id="wrapper_4">
 		<div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
 			<h1>EthFair</h2>
@@ -69,14 +78,12 @@
 		</h4>
 	<div class="ico_address">
 		<input type="text" value="Coming soon" id="myInput">
-		<!-- 
 		<div class="tooltip">
 		<button onclick="myFunction()" onmouseout="outFunc()">
   		<span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
   		Copy
   		</button>
 		</div>
-		-->
 	</div>
 	<h4>
 		Accepted currency: ETH
@@ -299,7 +306,7 @@ for (i = 0; i < acc.length; i++) {
 }
 });
 </script> 
-<h6>
+<h6 class="features_class">
 	Features
 </h6>
 <div data-aos="fade-down" class="features">
@@ -373,7 +380,7 @@ for (i = 0; i < acc.length; i++) {
 </h2>
 </div>
 </div>
-<h6 id="entropy">Reward for entropy</h6>
+<h6 class="reward_class" id="entropy">Reward for entropy</h6>
 <div class="text_2">
 	<h2>
 		Generating a provably random number is a complex process that is impossible without a source of entropy. Unfortunately the Ethereum blockchain does not have any suitable built-in sources of entropy.</h2><h2>In order to mitigate this problem EthFair project will use user-generated inputs as a source of entropy. 
@@ -551,18 +558,18 @@ for (i = 0; i < acc.length; i++) {
 	<div class="about_us">
 		<div class="people_1" data-aos="flip-left" data-aos-duration="1500">
 			<h4 align="center">Milliano Conti</h4>
-			<h5 align="center">Founder</h5>
-			<h3 align="center"> MillianoConti@gmail.com<br><img src="img/mail.png"></h3>
+			<h5 class="founder" align="center">Founder</h5>
+			<h3 align="center"><a class="mail_red" href="mailto:MillianoConti@gmail.com">MillianoConti@gmail.com<br><img src="img/mail.png"></a><a href="https://twitter.com/@Milliano_Conti/" target="_blank" title="twitter"><img src="img/twit_jek.png" alt="twitter"></a></h3>
 		</div>
 		<div class="people_2" data-aos="flip-left" data-aos-duration="2000">
 			<h4 align="center">Maria Rebrova</h4>
-			<h5 align="center">Website developer (desktop version)<br>Smart-contract interface developer<br>Artwork designer</h5>
-			<h3 align="center">ligreat875@gmail.com<br><img src="img/mail.png"><a href="https://github.com/Sparke2" target="_blank" title="github"><img src="img/github.png" alt="github"></a></h3>
+			<h5 align="center">Designer, interface developer</h5>
+			<h3 align="center"><a class="mail_red" href="mailto:ligreat875@gmail.com">ligreat875@gmail.com<br><img src="img/mail.png"></a><a href="https://github.com/Sparke2" target="_blank" title="github"><img src="img/github.png" alt="github"></a></h3>
 		</div>
 		<div class="people_3" data-aos="flip-left" data-aos-duration="2500">
 			<h4 align="center">Vadim Doronin</h4>
 			<h5 align="center"> Web Developer</h5>
-			<h3 align="center">snijweb@gmail.com<br><img src="img/mail.png"></h3>
+			<h3 align="center"><a class="mail_red" href="mailto:snijweb@gmail.com">snijweb@gmail.com<br><img src="img/mail.png"></a></h3>
 		</div>
 
 		<div class="line_1"></div>
@@ -581,8 +588,8 @@ for (i = 0; i < acc.length; i++) {
 		<div id="social">
 			<a href="https://twitter.com/eth_fair/" target="_blank" title="twitter"><img src="img/twitter.jpg" alt="twitter"></a>
 			<a href="https://t.me/EthFairDeFi" target="_blank" title="telegram"><img src="img/telegram.jpg" alt="telegram"></a>
-			<a href="https://www.reddit.com/user/EthFair/" target="_blank" title="reddit"><img src="img/reddit.svg" alt="reddit"></a>
-			<a target="_blank" title="mail"><img src="img/mail.png" alt="mail"></a>
+			<a href="https://www.reddit.com/r/EthFair/" target="_blank" title="reddit"><img src="img/reddit.svg" alt="reddit"></a>
+			<a target="_blank" title="mail" href="mailto:EthFair.DeFi@gmail.com"><img src="img/mail.png" alt="mail"></a>
 			<p>EthFair.DeFi@gmail.com</p>
 		</div>
 		<div id="rights">All Rights Reserved &copy;
