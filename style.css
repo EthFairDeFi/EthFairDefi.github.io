@@ -1002,7 +1002,6 @@ h5 {
   width: 100%;
   position: relative;
 }
-
 .people_1 {
   top: 4%;
   left: 7%;
@@ -1017,9 +1016,9 @@ h5 {
 }
 .people_2 {
   top: 21%;
-  left: 68%;
+  left: 67%;
   width: 4%;
-  height: 18%;
+  height: 20%;
   background: #ffbe6a;
   margin-bottom: 4%;
   position: absolute;
@@ -1085,7 +1084,7 @@ line_main {
 }
 .line_2 {
   top: 19%;
-  left: 50%;
+  left: 49%;
   width: 30%;
   height: 0.5%;
   background: #000;
@@ -1151,14 +1150,14 @@ line_main {
   color: #000;
   font-family: "Titillium Web", sans-serif;
   margin-top: 1%;
-  font-size: calc(6px + 1vw);
+  font-size: 20px;
   line-height: 100%;
   word-wrap: break-word;
 }
 .about_us h5 {
   color: #dfe3e4;
   font-family: "Titillium Web", sans-serif;
-  font-size: calc(6px + 1vw);
+  font-size: 20px;
   line-height: 100%;
   margin-top: 1%;
   word-wrap: break-word;
@@ -1166,7 +1165,7 @@ line_main {
 .about_us h3 {
   color: #000;
   font-family: "Titillium Web", sans-serif;
-  font-size: calc(6px + 1vw);
+  font-size:20px;
   line-height: 100%;
   margin-top: 1%;
   word-wrap: break-word;
