@@ -512,7 +512,8 @@ footer #social img {
   width: 30px;
   height: 27px;
   float: left;
-  margin-left: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 footer #social p {
   width: 100%;
@@ -1165,7 +1166,7 @@ line_main {
 .about_us h3 {
   color: #000;
   font-family: "Titillium Web", sans-serif;
-  font-size:20px;
+  font-size: 20px;
   line-height: 100%;
   margin-top: 1%;
   word-wrap: break-word;
