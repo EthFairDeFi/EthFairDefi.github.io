@@ -1398,7 +1398,7 @@ line_main {
     width: 26px;
     height: 26px;
     float: left;
-    margin-left: 20px;
+    margin-left: 5px;
   }
   footer #rights {
     font-size: 0.9em;
@@ -2066,7 +2066,7 @@ line_main {
     margin-top: -4%;
   }
   footer #social img {
-    margin-left: 10px;
+    margin-left: 1px;
   }
 }
 
@@ -2518,4 +2518,135 @@ line_main {
 }
 .size_foont {
   font-size: 15px;
+}
+.people_2 h5 {
+  font-size: 18px;
+}
+@media (max-width: 1250px) {
+  .people_2 h5 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1025px) {
+  .people_2 {
+    height: 150px;
+    width: 41%;
+    left: 57%;
+  }
+  .people_2 h4 {
+    font-size: 18px;
+  }
+  .people_1 {
+    height: 110px;
+    width: 35%;
+    left: 2%;
+    font-size: 16px;
+  }
+  .people_1 h4 {
+    font-size: 18px;
+  }
+  .people_3 {
+    height: 100px;
+    width: 35%;
+    left: 2%;
+    font-size: 16px;
+  }
+  .people_3 h4 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 760px) {
+  .mail_red {
+    font-size: 16px;
+    margin: 0;
+  }
+  .people_1 {
+    height: 130px;
+    font-size: 16px;
+  }
+  .people_1 h5 {
+    font-size: 16px;
+  }
+  .people_3 {
+    height: 130px;
+    font-size: 16px;
+  }
+  .people_3 h5 {
+    font-size: 16px;
+  }
+  .people_2 {
+    height: 160px;
+  }
+  .people_2 h3 {
+    margin-top: -15%;
+  }
+}
+@media (max-width: 650px) {
+  .people_2 h3 {
+    margin-top: -15%;
+    height: 180px;
+  }
+  .people_2 h5 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 560px) {
+  .mail_red {
+    font-size: 13px;
+  }
+  .people_2 h3 {
+    margin-top: -23%;
+    height: 180px;
+  }
+}
+@media (max-width: 530px) {
+  .people_2 h3 {
+    margin-top: -29%;
+  }
+  .people_2 {
+    height: 200px;
+  }
+}
+@media (max-width: 450px) {
+  .mail_red {
+    font-size: 11px;
+  }
+  .about_us h4 {
+    font-size: 13px;
+  }
+  .about_us h5 {
+    font-size: 13px;
+    margin-top: 11px;
+  }
+  .about_us h3 {
+    margin-top: -14%;
+  }
+  .people_2 h3 {
+    margin-top: -36%;
+  }
+}
+@media (max-width: 380px) {
+  .mail_red {
+    font-size: 10px;
+  }
+  .people_2 {
+    height: 170px;
+  }
+  .people_2 h3 {
+    margin-top: -45%;
+  }
+  .people_2 h5 {
+    top: 60px;
+  }
+  .people_2 h5 {
+    font-size: 12px;
+  }
+}
+@media (max-width: 340px) {
+  .mail_red {
+    font-size: 9px;
+  }
+  .people_2 h5 {
+    font-size: 10px;
+  }
 }
